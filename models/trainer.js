@@ -16,10 +16,12 @@ const trainerSchema = new Schema({
     type: String,
     required: true
   },
-  subject: {
-    type: String,
-    required: true
-  },
+  trainingSubjects: [
+    {
+      type: Schema.Types.ObjectId,
+      ref: "subject"
+    }
+  ],
   job_type: {
     type: String,
     required: true

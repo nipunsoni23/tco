@@ -20,11 +20,15 @@ const trainerSchema = new Schema({
     type: String,
     required: true
   },
-
-  learners: {
-    type: Schema.Types.ObjectId,
-    ref: "learner"
+  job_type: {
+    type: String,
+    required: true
   }
+
+  // learners: {
+  //   type: Schema.Types.ObjectId,
+  //   ref: "learner"
+  // }
 });
 
 // Create a model of the schema

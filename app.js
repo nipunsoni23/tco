@@ -24,7 +24,7 @@ app.get("/learners", (req, res) => {
 app.post("/addLearner", (req, res) => {
   Learner.findOne({ email: req.body.email }).then(user => {
     if (user) {
-      throw new Error("User already exists");
+      throw new Error("This email is already registered.");
     }
     const learner = new Learner({
       name: req.body.name,
@@ -38,19 +38,25 @@ app.post("/addLearner", (req, res) => {
   });
 });
 
+// add a new trainer
 app.post("/addTrainer", (req, res) => {
-  const trainer = new Trainer({
-    name: req.body.name,
-    email: req.body.email,
-    password: req.body.password,
-    subject: req.body.subject
-  });
-  trainer
-    .save()
-    .then(result => {})
-    .catch(err => {
+  Trainer.findOne({ email: req.body.email }).then(user => {
+    if (user) {
+      throw new Error("This email is already registered.");
+    }
+
+    const trainer = new Trainer({
+      name: req.body.name,
+      email: req.body.email,
+      password: req.body.password,
+      subject: req.body.subject,
+      job_type: req.body.job_type
+    });
+
+    trainer.save().catch(err => {
       console.log(err);
     });
+  });
 });
 
 mongoose

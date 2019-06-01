@@ -1,65 +1,80 @@
- /* Bordered form */
- 
-*{background-color:#686D72;
-/* border: 2px black solid;  */
+ *{
+   margin:0px;
+   padding:0px;
+ }
+.form-container{
+background-image: url("../images/bg.jpg"); /* W3C */
 margin: 0px;
 padding: 0px;
+background-repeat: no-repeat;
+  background-position: center;
+  background-size: cover;
+  display:flex;
+  flex-direction:row;
+  justify-content:space-around;
+}
+form{
+  display: flex;
+  flex-direction: column;
+  justify-content: space-around;
+  align-content: center;
+  align-items: center;
+  background: white;
+  border-radius: 20px;
+  width: 36vw;
+  margin: 5vh ;
+  padding: 1vh;
+  box-shadow: 9px 6px 25px -4px rgba(69,69,69,1);
+
 }
 /* Full-width inputs */
+/* form{
+  background: auto;
+  border-radius: 20px;
+} */
 input[type=text], input[type=password] {
-  width: 50vw;
+  width: 33vw;
   padding: 12px 20px;
   margin: 8px 0;
   display: inline-block;
-  border: 1px solid #ccc;
-  box-sizing: border-box;
-   box-shadow: 9px 6px 25px -4px rgba(69,69,69,1);
-}
-.profession {
-  border-radius: 4px;
-  background-color:#dbe3cf;
+  /* background: white; */
   border: none;
-  color: black;
-  text-align: center;
-  font-size: 28px;
-  padding: 15px;
-  width: 250px;
-  transition: all 0.5s;
-  cursor: pointer;
-  margin: 5px;
+  
 }
 
-.profession:hover {
-  box-shadow: 0 12px 16px 0 rgba(0,0,0,0.24),0 17px 50px 0 rgba(0,0,0,0.19);
-  background-color: #bcc3b0;
-}
 
 /* Set a style for all buttons */
 .submit {
-  background-color: #F8444F;
+  background-image:url("../images/bg-01.webp");
   color:white;
   padding: 14px 20px;
   margin: 8px 0;
   border: none;
   cursor: pointer;
-  width: 50vw;
+  width: 33vw;
+  box-shadow: -2px -1px 49px -11px rgba(0,0,0,0.75);
+  border-radius: 20px;
+  text-shadow: -2px -1px 49px -11px white(0,0,0,0.75);
 }
 
 /* Add a hover effect for buttons */
 .submit:hover {
   opacity: 0.8;
+  color: white;
 }
-
 
 /* Center the avatar image inside this container */
 .imgcontainer {
   text-align: center;
-  margin: 24px 0 12px 0;
+  margin: 1vh auto;
+  width: auto;
+  /* background: white; */
 }
 
 img.avatar {
   width: 15vw;
   border-radius: 50%;
+  margin: 1vh auto;
 }
 
 /* Add padding to containers */
@@ -68,20 +83,22 @@ img.avatar {
   display: flex;
   flex-direction: column;
   align-items: center;
-  width: 50vw;
-  background-color:#686D72 ;
-  margin: 2vh auto;
+  width: 33vw;
+  margin: 1vh auto;
+  /* background:white; */
 }
 
 .username,.password,.submit{
   display:flex;
   flex-direction: column;
+  /* background:white; */
+
 }
 /* The "Forgot password" text */
 span.psw {
   float: right;
   padding-top: 16px;
-  color: white;
+  color: black;
 }
 span.psw-nu{
   font-size: 1.5rem;
@@ -96,20 +113,20 @@ span.psw-nu{
   
 } 
 a:link {
-  color:white;
+  color:palevioletred;
 }
 
 /* visited link */
 a:visited {
-  color: white;
+  color: palevioletred;
 }
 
 /* mouse over link */
 a:hover {
-  color:white;
+  color:rgb(61, 58, 58);
 }
 
 /* selected link */
 a:active {
-  color:white;
+  color:palevioletred;
 }

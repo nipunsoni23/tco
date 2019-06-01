@@ -18,7 +18,7 @@ function getLearners() {}
 
 mongoose
   .connect(
-    `mongodb+srv://ashishk:ieJYCx0QICd4Cfoq@cluster0-h8cgc.mongodb.net/test?retryWrites=true&w=majority`,
+    `mongodb+srv://ekta:ekta123@cluster0-h8cgc.mongodb.net/test?retryWrites=true&w=majority`,
     { useNewUrlParser: true }
   )
   .then(() => {

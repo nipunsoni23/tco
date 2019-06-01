@@ -14,6 +14,12 @@ const app = express();
 app.use(express.static(path.join(__dirname, "/public")));
 app.use(bodyParser.json());
 
+// to check what pages are requested by the users.
+app.use((req, res, next) => {
+  console.log(`${new Date().toString()} => ${req.originalUrl}`);
+  next();
+});
+
 // routing middleware
 app.use(learnerRoute);
 app.use(trainerRoute);
@@ -27,6 +33,17 @@ app.set("view engine", "ejs");
 
 app.get("/", (req, res) => {
   res.render("pages/index");
+});
+
+// error 404 not found
+app.use((req, res, next) => {
+  res.status(404).send("This page does not exist.");
+});
+
+// error 500 internal server error
+app.use((err, req, res, next) => {
+  console.error(err);
+  res.send("Something went wrong :(");
 });
 
 mongoose

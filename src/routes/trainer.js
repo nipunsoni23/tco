@@ -14,6 +14,20 @@ router.get("/trainers", (req, res) => {
   });
 });
 
+// search for a specific trainer
+// for query string
+router.get("/person", (req, res) => {
+  if (req.query.name) {
+    res.send(`you requested for the person ${req.query.name}`);
+  } else {
+    res.send("you requested a person");
+  }
+});
+
+router.get("/trainers/:name", (req, res) => {
+  res.send(`you requested for: ${req.params.name}`);
+});
+
 // to add a new trainer to the db
 router.post("/addTrainer", (req, res) => {
   Trainer.findOne({ email: req.body.email }).then(user => {

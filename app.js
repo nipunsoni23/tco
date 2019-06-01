@@ -16,7 +16,7 @@ app.use(bodyParser.json());
 
 // to check what pages are requested by the users.
 app.use((req, res, next) => {
-  console.log(`${new Date().toString()} => ${req.originalUrl}`);
+  console.log(`${new Date().toString()} => ${req.originalUrl}`, req.body);
   next();
 });
 
@@ -37,13 +37,13 @@ app.get("/", (req, res) => {
 
 // error 404 not found
 app.use((req, res, next) => {
-  res.status(404).send("This page does not exist.");
+  res.status(404).render("pages/404");
 });
 
 // error 500 internal server error
 app.use((err, req, res, next) => {
   console.error(err);
-  res.send("Something went wrong :(");
+  res.render("pages/500");
 });
 
 mongoose

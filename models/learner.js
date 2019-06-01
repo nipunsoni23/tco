@@ -12,16 +12,16 @@ const learnerSchema = new Schema({
     type: String,
     required: true
   },
-  name:{
-      type: String,
-      required:true
-  },
-  subjectTrainer: [
-    {
-      type: Schema.Types.ObjectId,
-      ref: "trainer"
-    }
-  ]
+  name: {
+    type: String,
+    required: true
+  }
+  // subjectTrainer: [
+  //   {
+  //     type: Schema.Types.ObjectId,
+  //     ref: "trainer"
+  //   }
+  // ]
 });
 
 // Create model of the user schema

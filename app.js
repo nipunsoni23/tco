@@ -6,6 +6,9 @@ const mongoose = require("mongoose");
 // routes
 const learnerRoute = require("./src/routes/learner");
 const trainerRoute = require("./src/routes/trainer");
+const programRoute = require("./src/routes/program");
+const semesterRoute = require("./src/routes/semester");
+const subjectRoute = require("./src/routes/subject");
 
 // express app
 const app = express();
@@ -23,6 +26,9 @@ app.use((req, res, next) => {
 // routing middleware
 app.use(learnerRoute);
 app.use(trainerRoute);
+app.use(programRoute);
+app.use(semesterRoute);
+app.use(subjectRoute);
 
 // default port
 const PORT = 3000;
@@ -59,3 +65,13 @@ mongoose
   .catch(err => {
     console.log(err);
   });
+
+/**
+ * TODO
+ *
+ * test run program semster and subject routes
+ * email verification
+ * schema references
+ * arrays of schema
+ *
+ */

@@ -2,7 +2,7 @@ const mongoose = require("mongoose");
 
 const Schema = mongoose.Schema;
 
-// Shape of User document.
+// Shape of Subject document.
 const subjectSchema = new Schema({
   name: {
     type: String,
@@ -16,14 +16,7 @@ const subjectSchema = new Schema({
     type: Number,
     required: true
   }
-
-  //   subjectTrainer: [
-  //     {
-  //       type: Schema.Types.ObjectId,
-  //       ref: "trainer"
-  //     }
-  // ]
 });
 
-// Create model of the user schema
+// Create model of the Subject schema
 module.exports = mongoose.model("subject", subjectSchema);

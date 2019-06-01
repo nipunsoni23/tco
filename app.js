@@ -4,6 +4,7 @@ const mongoose = require("mongoose");
 
 // models
 const Learner = require("./models/learner");
+const Trainer = require("./models/trainer");
 
 const app = express();
 
@@ -11,25 +12,45 @@ app.use(bodyParser.json());
 
 const PORT = 3000;
 
-app.get("/", (req, res) => {
-  Learner.find(result => {
-    res.send(result);
-    console.log(result);
-  }).catch(err => {
-    console.log(err);
+app.get("/learners", (req, res) => {
+  Learner.find((err, learners) => {
+    if (err) {
+      return console.log(err);
+    }
+    res.json(learners);
   });
 });
 
-app.post("/", (req, res) => {
-  console.log(req.body);
-  const learner = new Learner({
+app.post("/addLearner", (req, res) => {
+  Learner.findOne({ email: req.body.email }).then(user => {
+    if (user) {
+      throw new Error("User already exists");
+    }
+    const learner = new Learner({
+      name: req.body.name,
+      email: req.body.email,
+      password: req.body.password
+    });
+
+    learner.save().catch(err => {
+      console.log(err);
+    });
+  });
+});
+
+app.post("/addTrainer", (req, res) => {
+  const trainer = new Trainer({
     name: req.body.name,
     email: req.body.email,
-    password: req.body.password
+    password: req.body.password,
+    subject: req.body.subject
   });
-  learner.save().catch(err => {
-    console.log(err);
-  });
+  trainer
+    .save()
+    .then(result => {})
+    .catch(err => {
+      console.log(err);
+    });
 });
 
 mongoose

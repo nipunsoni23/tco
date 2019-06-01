@@ -4,21 +4,26 @@ const mongoose = require("mongoose");
 
 const app = express(bodyParser.json());
 
-const PORT = process.env.PORT || 3000;
+const PORT = 3000;
 
-app.use("/", (req, res) => {
+app.get("/", (req, res) => {
   res.send("home");
 });
 
+app.post("/addLearners", (req, res) => {});
+
+function getLearners() {}
+
+//MitWswv8udRKltAM;268DgAHVugeO4wD2
+
 mongoose
   .connect(
-    `mongodb+srv://ashish:eb5CT2mv7vz1h7Ph@cluster0-b4fmv.mongodb.net/${
-      process.env.MONGO_DB
-    }?retryWrites=true`
+    `mongodb+srv://ashishk:ieJYCx0QICd4Cfoq@cluster0-h8cgc.mongodb.net/test?retryWrites=true&w=majority`,
+    { useNewUrlParser: true }
   )
   .then(() => {
     app.listen(3000, () => {
-      console.log("Server running on port 3000");
+      console.log(`Server running on port {PORT}`);
     });
   })
   .catch(err => {

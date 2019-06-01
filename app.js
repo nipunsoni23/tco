@@ -1,62 +1,32 @@
+const path = require("path");
 const express = require("express");
 const bodyParser = require("body-parser");
 const mongoose = require("mongoose");
 
-// models
-const Learner = require("./models/learner");
-const Trainer = require("./models/trainer");
+// routes
+const learnerRoute = require("./src/routes/learner");
+const trainerRoute = require("./src/routes/trainer");
 
+// express app
 const app = express();
 
+// middlewares
+app.use(express.static(path.join(__dirname, "/public")));
 app.use(bodyParser.json());
 
+// routing middleware
+app.use(learnerRoute);
+app.use(trainerRoute);
+
+// default port
 const PORT = 3000;
 
-app.get("/learners", (req, res) => {
-  Learner.find((err, learners) => {
-    if (err) {
-      return console.log(err);
-    }
-    res.json(learners);
-  });
-});
+// set the view engine to ejs
+app.set("views", path.join(__dirname, "views"));
+app.set("view engine", "ejs");
 
-app.post("/addLearner", (req, res) => {
-  Learner.findOne({ email: req.body.email }).then(user => {
-    if (user) {
-      throw new Error("This email is already registered.");
-    }
-    const learner = new Learner({
-      name: req.body.name,
-      email: req.body.email,
-      password: req.body.password
-    });
-
-    learner.save().catch(err => {
-      console.log(err);
-    });
-  });
-});
-
-// add a new trainer
-app.post("/addTrainer", (req, res) => {
-  Trainer.findOne({ email: req.body.email }).then(user => {
-    if (user) {
-      throw new Error("This email is already registered.");
-    }
-
-    const trainer = new Trainer({
-      name: req.body.name,
-      email: req.body.email,
-      password: req.body.password,
-      subject: req.body.subject,
-      job_type: req.body.job_type
-    });
-
-    trainer.save().catch(err => {
-      console.log(err);
-    });
-  });
+app.get("/", (req, res) => {
+  res.render("pages/index");
 });
 
 mongoose

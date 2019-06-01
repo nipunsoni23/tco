@@ -3,7 +3,7 @@
    padding:0px;
  }
 .form-container{
-background-image: url("bg.png"); /* W3C */
+background-image: url("../images/bg.jpg"); /* W3C */
 margin: 0px;
 padding: 0px;
 background-repeat: no-repeat;
@@ -45,7 +45,7 @@ input[type=text], input[type=password] {
 
 /* Set a style for all buttons */
 .submit {
-  background-image:url("bg-01.webp");
+  background-image:url("../images/bg-01.webp");
   color:white;
   padding: 14px 20px;
   margin: 8px 0;

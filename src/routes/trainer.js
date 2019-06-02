@@ -14,25 +14,76 @@ router.get("/trainers", (req, res) => {
   });
 });
 
+// search for a specific trainer
+// for query string
+router.get("/person", (req, res) => {
+  if (req.query.name) {
+    res.send(`you requested for the person ${req.query.name}`);
+  } else {
+    res.send("you requested a person");
+  }
+});
+
+router.get("/trainer", (req, res) => {
+  if (!req.query.name) {
+    return res.status(400).send("Missing URL parameter: name");
+  }
+  Trainer.find({ name: req.query.name })
+    .then(doc => {
+      res.json(doc);
+    })
+    .catch(err => {
+      res.status(500).json(err);
+    });
+});
+
 // to add a new trainer to the db
-router.post("/addTrainer", (req, res) => {
-  Trainer.findOne({ email: req.body.email }).then(user => {
-    if (user) {
-      throw new Error("This email is already registered.");
-    }
+router.post("/add-trainer", (req, res) => {
+  if (!req.body) {
+    return res.status(400).send("Request body is missing");
+  }
 
-    const trainer = new Trainer({
-      name: req.body.name,
-      email: req.body.email,
-      password: req.body.password,
-      subjects: req.body.subjects,
-      job_type: req.body.job_type
-    });
+  const trainer = new Trainer(req.body);
 
-    trainer.save().catch(err => {
-      console.log(err);
+  trainer
+    .save()
+    .then(doc => {
+      if (!doc || doc.length === 0) {
+        return res.status(500).send(doc);
+      }
+      res.status(201).send(doc);
+    })
+    .catch(err => {
+      res.status(500).json(err);
     });
-  });
+});
+
+// PUT - update a specific trainer's info by passing trainer's email in the url.
+router.put("/trainer", (req, res) => {
+  if (!req.query.email) {
+    return res.status(400).send("Missing URL parameter: email");
+  }
+  Trainer.findOneAndUpdate({ email: req.query.email }, req.body, { new: true })
+    .then(doc => {
+      res.json(doc);
+    })
+    .catch(err => {
+      res.status(500).json(err);
+    });
+});
+
+// DELETE - to remove a trainer from the db by passing email to the url.
+router.delete("/trainer", (req, res) => {
+  if (!req.query.email) {
+    return res.status(400).send("Missing URL parameter: email");
+  }
+  Trainer.findOneAndDelete({ email: req.query.email })
+    .then(doc => {
+      res.json(doc);
+    })
+    .catch(err => {
+      res.status(500).json(err);
+    });
 });
 
 module.exports = router;

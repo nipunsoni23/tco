@@ -1,0 +1,76 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <title>Bootstrap Example</title>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.0/css/bootstrap.min.css">
+  <link rel="stylesheet" href="/stylesheet/trainerdash.css">
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.0/jquery.min.js"></script>
+  <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.0/js/bootstrap.min.js"></script>
+  <style>
+    /* Set height of the grid so .sidenav can be 100% (adjust as needed) */
+    .row.content {height: 550px}
+    
+    /* Set gray background color and 100% height */
+    .sidenav {
+      background-color: #DADBE0;
+      height: 100%;
+    }
+        
+    /* On small screens, set height to 'auto' for the grid */
+    @media screen and (max-width: 767px) {
+      .row.content {height: auto;} 
+    }
+
+    
+  </style>
+</head>
+<body>
+
+<div class="container-fluid sidebar ">
+  <div class="row content ">
+    <div class="col-sm-3 sidenav hidden-xs ">
+        <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcS32fZtSx6C6gMJGp95NN5O09FtFIphVAeAVg11q8yD33TWA9Fu" alt="icon" class="image">
+      <h2 class="center"> Name</h2>
+      <ul class="nav nav-pills nav-stacked navbar">
+        <li class="liatt">Email : xvz@gmail.com</li>
+        <li class="liatt">Contact : ###</li>
+       <li class="liatt">Feedback : ###</li>
+      </ul><br>
+    </div>
+    <br>
+    
+    <div class="col-sm-9 topnav ">
+        <ul >
+          <li><a href="Subjects.ejs" class="topnavcontent active">Subjects</a></li>
+          <li><a href="BulletinBoard.ejs"  class="topnavcontent">Bulletin Board</a></li>
+          <li><a href="Announcements.ejs"  class="topnavcontent">Announcements</a></li>
+          </ul>
+     
+      </div >
+     
+     <div class="col-sm-3 topnav  ">
+      <br>
+      <div> <button class="button" ><a href=""><font color="black">link1</font></a></button></div><br>
+      <div><button class="button"><a href=""><font color="black">link 2</font></a></button></div><br>
+      <div> <button class="button"><a href=""><font color="black">link 3</font></a></button></div>
+      </div>
+
+      <div class="col-sm-3 topnav  ">
+        <img src="https://img.pngio.com/vector-stack-of-books-vector-stacking-book-png-and-vector-for-free-png-stack-of-books-650_453.png"
+         alt="image" class="studylinklogo">
+        </div>
+
+        <div class="col-sm-9 ">
+            <div> <button class="assbtn"><a href=""><font color="black">Upload Assignments</font></a></button></div>
+           </div>
+      <div class="bottomnav">
+          bottomnav
+          <br>
+          contact:####
+      </div>
+      </div>
+    </div>
+    </body>
+</html>

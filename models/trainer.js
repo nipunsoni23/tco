@@ -10,18 +10,19 @@ const trainerSchema = new Schema({
   },
   email: {
     type: String,
-    required: true
+    required: true,
+    unique: true
   },
   password: {
     type: String,
     required: true
   },
-  trainingSubjects: [
-    {
-      type: Schema.Types.ObjectId,
-      ref: "subject"
-    }
-  ],
+  // trainingSubjects: [
+  //   {
+  //     type: Schema.Types.ObjectId,
+  //     ref: "subject"
+  //   }
+  // ],
   job_type: {
     type: String,
     required: true

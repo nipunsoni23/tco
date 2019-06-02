@@ -1,0 +1,140 @@
+ul {
+    list-style-type: none;
+    margin: 0;
+    padding: 0;
+    overflow: hidden;
+    background-color: #333;
+  }
+  
+  li {
+    float: left;
+  }
+  
+  li a {
+    display: block;
+    color: white;
+    text-align: center;
+    padding: 14px 16px;
+    text-decoration: none;
+  }
+  
+  li a:hover {
+    background-color: #6C7489;
+    color: black;
+  }
+  .center{
+      text-align: center;
+  }
+  .image {
+      margin-top: 20px;
+    display: block;
+    transition: transform 1s;
+    margin-left: auto;
+    margin-right: auto;
+    width: 50%;
+    border-radius: 50%;
+  }
+  .image:hover {
+    transform: scale(1.1); 
+  }
+  .navbar{
+    background-color: #193174;
+    
+  }
+  .sidebar{
+    height: 150px;
+  }
+  .liatt{
+      padding-top: 10px;
+      padding-bottom: 10px;
+      text-align: center;
+      font-size: 15px;
+     color: white;
+  }
+  .topnav{
+      font-size: 20px;
+  }
+  .topnavcontent{
+      font-size: 20px;
+      padding-left:30px;
+      text-align: center;
+     
+  }
+  .bottomnav{
+    overflow: hidden;
+    position: fixed;
+    bottom: 0;
+    width: 100%;
+  height:60px;
+    background-color: black;
+   color:white;
+  }
+  
+  .content{
+      text-align: center;
+      font-size: 15px;
+      background-color: white;
+  }
+
+  .active {
+    background-color: #666;
+    color: white;
+  }
+  .table{
+    padding-top: 30px;
+  }
+  .button {
+   color:black;
+    border: none;
+    padding: 15px 32px;
+    text-align: center;
+    text-decoration: none;
+    display: inline-block;
+    font-size: 22px;
+    width:300px;
+  }
+
+ .button:hover{
+   background-color:#A9C7EE;
+   box-shadow: 6px 6px 3px grey;
+   border-radius: 10px;
+ }
+ .studylinklogo{
+  height:200px;
+   width:auto;
+   margin-top:70px; 
+   margin-right: 40px;
+ }
+
+ .assbtn{
+  color:black;
+  border: none;
+  padding: 15px 32px;
+  text-align: center;
+  text-decoration: none;
+  display: inline-block;
+  font-size: 22px;
+  width:300px;
+  margin-top: 60px;
+ }
+
+ .assbtn:hover{
+  background-color:rgb(226, 127, 45);
+  box-shadow: 6px 6px 3px grey;
+  border-radius: 10px;
+}
+.announce{
+  background-color: #7da3e9;
+  height: 426px;
+  margin-top: 20px;
+  text-align: center;
+  font-size: 30px;
+ 
+}
+.table{
+  text-align: centre;
+  font-size: 20px;
+}
+.center{
+  text-align: center;
+}

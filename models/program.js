@@ -6,7 +6,8 @@ const Schema = mongoose.Schema;
 const programSchema = new Schema({
   name: {
     type: String,
-    required: true
+    required: true,
+    unique: true
   },
   numberOfSemesters: {
     type: Number,

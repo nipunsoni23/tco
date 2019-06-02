@@ -6,7 +6,8 @@ const Schema = mongoose.Schema;
 const semesterSchema = new Schema({
   number: {
     type: Number,
-    required: true
+    required: true,
+    unique: true
   },
   minCredits: {
     type: Number,

@@ -6,13 +6,10 @@ const Schema = mongoose.Schema;
 const subjectSchema = new Schema({
   name: {
     type: String,
-    required: true
+    required: true,
+    unique: true
   },
-  mincredits: {
-    type: Number,
-    required: true
-  },
-  maxcredits: {
+  credits: {
     type: Number,
     required: true
   }

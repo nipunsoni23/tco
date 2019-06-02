@@ -1,132 +1,156 @@
- *{
-   margin:0px;
-   padding:0px;
- }
+*{
+  margin:0px;
+  padding:0px;
+}
 .form-container{
 background-image: url("../images/bg.jpg"); /* W3C */
 margin: 0px;
 padding: 0px;
 background-repeat: no-repeat;
-  background-position: center;
-  background-size: cover;
-  display:flex;
-  flex-direction:row;
-  justify-content:space-around;
+ background-position: center;
+ background-size: cover;
+ display:flex;
+ flex-direction:column;
+ justify-content:space-around;
+ align-items:center;
+ height: 100vh;
 }
 form{
-  display: flex;
-  flex-direction: column;
-  justify-content: space-around;
-  align-content: center;
-  align-items: center;
-  background: white;
-  border-radius: 20px;
-  width: 36vw;
-  margin: 5vh ;
-  padding: 1vh;
-  box-shadow: 9px 6px 25px -4px rgba(69,69,69,1);
+ display: flex;
+ flex-direction: column;
+ justify-content: space-around;
+ align-content: center;
+ align-items: center;
+ background: white;
+ border-radius: 20px;
+ width: 36vw;
+ margin: 3vh ;
+ padding: 1vh;
+ box-shadow: 9px 6px 25px -4px rgba(69,69,69,1);
+ height: 96vh;
 
 }
 /* Full-width inputs */
 /* form{
-  background: auto;
-  border-radius: 20px;
+ background: auto;
+ border-radius: 20px;
 } */
 input[type=text], input[type=password] {
-  width: 33vw;
-  padding: 12px 20px;
-  margin: 8px 0;
-  display: inline-block;
-  /* background: white; */
-  border: none;
-  
+ width: 33vw;
+ padding: 0.5vh auto;
+ margin: 0.8vh auto;
+ display: inline-block;
+ /* background: white; */
+ border: none;
+ 
 }
 
 
 /* Set a style for all buttons */
 .submit {
-  background-image:url("../images/bg-01.webp");
-  color:white;
-  padding: 14px 20px;
-  margin: 8px 0;
-  border: none;
-  cursor: pointer;
-  width: 33vw;
-  box-shadow: -2px -1px 49px -11px rgba(0,0,0,0.75);
-  border-radius: 20px;
-  text-shadow: -2px -1px 49px -11px white(0,0,0,0.75);
+ background-image:url("../images/bg-01.webp");
+ color:white;
+ padding: 14px 20px;
+ margin: 8px 0;
+ border: none;
+ cursor: pointer;
+ width: 33vw;
+ box-shadow: -2px -1px 49px -11px rgba(0,0,0,0.75);
+ border-radius: 20px;
 }
 
 /* Add a hover effect for buttons */
-.submit:hover {
-  opacity: 0.8;
-  color: white;
+.submit:hover,button:hover{
+ opacity: 0.8;
 }
 
 /* Center the avatar image inside this container */
 .imgcontainer {
-  text-align: center;
-  margin: 1vh auto;
-  width: auto;
-  /* background: white; */
+ text-align: center;
+ margin: 1vh auto;
+ width: auto;
+ height: auto;
+ /* background: white; */
 }
 
 img.avatar {
-  width: 15vw;
-  border-radius: 50%;
-  margin: 1vh auto;
+ width: 12vw;
+ border-radius: 50%;
+ margin: 1vh auto;
 }
-
+input[type=text]:focus, input[type=password]:focus {
+ background-color: #ddd;
+ outline: none;
+ padding: 5px;
+}
 /* Add padding to containers */
 .container {
-  padding: 2vw;
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  width: 33vw;
-  margin: 1vh auto;
-  /* background:white; */
+ padding: 0.5vw;
+ display: flex;
+ flex-direction: column;
+ align-items: center;
+ width: 33vw;
+ margin: 1vh auto;
+ /* background:white; */
 }
 
 .username,.password,.submit{
-  display:flex;
-  flex-direction: column;
-  /* background:white; */
+ display:flex;
+ flex-direction: column;
+ /* background:white; */
 
 }
 /* The "Forgot password" text */
 span.psw {
-  float: right;
-  padding-top: 16px;
-  color: black;
+ float: right;
+ padding-top: 16px;
+ color: black;
 }
 span.psw-nu{
-  font-size: 1.5rem;
+ font-size: 1.5rem;
 }
+.profile{
+ background-color: rgb(19, 117, 209); /* Green */
+ /* border: none; */
+ color: white;
+ padding: 1vh;
+ text-align: center;
+ text-decoration: none;
+ display: inline-block;
+ font-size: 1.2em;
+ margin: 2vh 2vw;
+ width: 7vw;
+ border-radius: 20px;
+ box-shadow: -2px -1px 49px -11px rgba(46, 45, 45, 0.75);
 
+}
 /* Change styles for span and cancel button on extra small screens */
 @media screen and (max-width: 300px) {
-  span.psw {
-    display: block;
-    float: none;
-  }
-  
+ span.psw {
+   display: block;
+   float: none;
+ }
+ .reg{
+   display: flex;
+   justify-content: space-around;
+   flex-direction: column;
+ }
 } 
 a:link {
-  color:palevioletred;
+ color:palevioletred;
 }
 
 /* visited link */
 a:visited {
-  color: palevioletred;
+ color: palevioletred;
 }
 
 /* mouse over link */
 a:hover {
-  color:rgb(61, 58, 58);
+ color:rgb(61, 58, 58);
 }
 
 /* selected link */
 a:active {
-  color:palevioletred;
+ color:palevioletred;
 }

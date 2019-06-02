@@ -1,0 +1,115 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta http-equiv="X-UA-Compatible" content="ie=edge">
+  <title>Trainer Sign Up</title>
+  <link rel="stylesheet" href="../stylesheets/signup.css">
+  <link rel="icon" href="../images/favicon.ico">
+
+</head>
+
+<body>
+  <div class="form-container">
+    <form action="action_page.php">
+      <div class="container">
+        <div class="introduction">
+          <h1 class="signin"> Trainer Sign Up</h1>
+          <br>
+          <p>Please fill in this form to sign up as a Trainer.</p>
+          <hr>
+        </div>
+        <div class="name" b class="detail">
+          <label for="name"><b class="detail">Name</b></label>
+          <input type="text" placeholder="Enter name" name="name" required>
+        </div>
+        <div class="email">
+          <label for="email"><b class="detail">Email</b></label>
+          <input type="text" placeholder="Enter Email" name="email" required>
+        </div>
+        <div class=" password">
+          <label for="psw"><b class="detail">Password</b></label>
+          <input type="password" placeholder="Enter Password" name="psw" required>
+        </div>
+        <div class="rep-psw">
+          <label for="psw-repeat"><b class="detail">Repeat Password</b></label>
+          <input type="password" placeholder="Repeat Password" name="psw-repeat" required>
+        </div>
+
+        <div class="qualifications">
+          <label for="qualifications"><b class="detail">Qualifications</b></label>
+          <input type="text" placeholder="Provide Educational Degrees" name="degree" required>
+
+          <!-- <br>
+          <br>
+          <form>
+            <div class="multiselect">
+              <div class="selectBox" onclick="showCheckboxes(1)">
+                <select>
+                  <option>Select Educational Degrees</option>
+                </select>
+                <div class="overSelect"></div>
+              </div>
+              <div id="checkboxes1">
+                <label for="one">
+                  <input type="checkbox" id="one" />Phd.</label>
+                <label for="two">
+                  <input type="checkbox" id="two" />Mtech.</label>
+                <label for="three">
+                  <input type="checkbox" id="three" />B.Ed.</label>
+              </div>
+            </div>
+          </form>-->
+        </div>
+        <div class="subjects">
+          <label for="subjects"><b class="detail">Subjects</b></label>
+          <br>
+          <br>
+          <form>
+            <div class="multiselect">
+              <div class="selectBox" onclick="showCheckboxes()">
+                <select>
+                  <option>Select Courses</option>
+                </select>
+                <div class="overSelect"></div>
+              </div>
+              <div id="checkboxes">
+                <label for="one">
+                  <input type="checkbox" id="one" />A</label>
+                <label for="two">
+                  <input type="checkbox" id="two" />B</label>
+                <label for="three">
+                  <input type="checkbox" id="three" />C</label>
+              </div>
+            </div>
+          </form>
+        </div>
+
+
+
+        <p>By creating an account you agree to our <a href="#" style="color:#78BDC4">Terms & Privacy</a>.</p>
+        <br>
+        <div class="clearfix">
+          <button type="submit" class="signupbtn">Sign Up</button>
+        </div>
+      </div>
+    </form>
+  </div>
+  <script>
+    var expanded = false;
+
+    function showCheckboxes() {
+      var checkboxes = document.getElementById("checkboxes");
+      if (!expanded) {
+        checkboxes.style.display = "block";
+        expanded = true;
+      } else {
+        checkboxes.style.display = "none";
+        expanded = false;
+      }
+    }</script>
+</body>
+
+</html>
